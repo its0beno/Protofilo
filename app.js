@@ -13,5 +13,24 @@ function pageTransition(){
 
         })
     }
+
+    allSections.addEventListener('click', (e)=>{
+        const id = e.target.dataset.id;
+        if(id){
+            sectBtns.forEach((btn) =>{
+                btn.classList.remove('active')
+            })
+            e.target.classList.add('active')
+
+
+            // to hide other sections
+            section.forEach((section)=>{
+                section.classList.remove('active')
+            })
+            const element = document.getElementById(id);
+            element.classList.add('active')
+        }
+
+    })
 }
 pageTransition();
